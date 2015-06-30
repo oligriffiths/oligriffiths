@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://www.makegoodcode.com/2015/06/30/namespacing-in-PHP-and-how-we-broke-it/index.html">
 <meta property="og:site_name" content="MakeGoodCode">
 <meta property="og:description" content="In the wild west that is PHP, we were given a tool, a magical tool to help us organise our code better, to become better programmers, and write better, more distributable code. And what did we do? We">
-<meta property="og:updated_time" content="2015-06-30T19:00:24.000Z">
+<meta property="og:updated_time" content="2015-06-30T19:04:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Namespacing in PHP and how we broke it">
 <meta name="twitter:description" content="In the wild west that is PHP, we were given a tool, a magical tool to help us organise our code better, to become better programmers, and write better, more distributable code. And what did we do? We">
@@ -126,7 +126,7 @@
 <p>There are several problems with these standards:</p>
 <p>The fact that a second standard (PSR-4) was even needed, clearly indicates that the PSR-0 standard was not thought through well enough.</p>
 <p>Both standards are about autoloading, yet force a specific naming convention in order to achieve autoloading, they’re attacking the problem from the wrong side, autoloading enforcing naming convetion, rather than naming convention dictating autoloading.</p>
-<p>This is both misleading, and harmful to developers. Sure, defining and autoloading standard, that has specific naming conventions may seem like a good thing, however it paves the way for one single autoloading standard to rule them all! (Until that standard get’s re-thought and replaced, <strong>cough</strong> PSR-4).</p>
+<p>This is both misleading, and harmful to developers. Sure, defining an autoloading standard, that has specific naming conventions may seem like a good thing, however it paves the way for one single autoloading standard to rule them all! (Until that standard get’s re-thought and replaced, <strong>cough</strong> PSR-4).</p>
 <p>A much better idea would have been to define an autoloading standard that allows naming standard specific rules to be registered against it, separating autoloading from naming standard.<br><a href="https://r.je/php-psr-0-pretty-shortsighted-really.html" target="_blank" rel="external">https://r.je/php-psr-0-pretty-shortsighted-really.html</a></p>
 <p>PSR-4 indicates that all fully qualified class names MUST have a namespace. This is completely wrong. In the case of package maintainers this is definitely a MUST, but in the case of user land code, the code that makes up the main non-distributable code of your app, this is completely unnecessary and architecturally inappropriate. User land code should not be namespaced, it has no need to be, you are in full control of it, yet the standard requires it for some unknown reason. Meaning you can’t use PSR-4 for non-package based autoloading, WAT?</p>
 <p><code>Namespaces\Class == file path</code>. The standards have butchered the use of namespacing for autoloading purposes, and autoloading purposes alone. This completely strips namespaces of any code structural relevance and renders them completely useless from a code standpoint. A standard should absolutely not enforce this, or even suggest this. Namespaces are great if used correctly. If autoloading didn’t use namespaces to map to files, a package maintainer may have at most a 2-3 level namespace:</p>
@@ -192,7 +192,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://www.makegoodcode.com/2015/06/30/namespacing-in-PHP-and-how-we-broke-it/" data-id="cibjpd2xm000ckbbe8ot6mgab" class="article-share-link">Share</a>
+      <a data-url="http://www.makegoodcode.com/2015/06/30/namespacing-in-PHP-and-how-we-broke-it/" data-id="cibjpe4s0000cn0be6n5mzfqb" class="article-share-link">Share</a>
       
         <a href="http://www.makegoodcode.com/2015/06/30/namespacing-in-PHP-and-how-we-broke-it/#disqus_thread" class="article-comment-link">Comments</a>
       
